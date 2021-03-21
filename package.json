@@ -1,0 +1,25 @@
+{
+    "name": "zinc-vscode-syntax",
+    "displayName": "zinc-vscode-syntax",
+    "description": "zinc programming language syntax support for vscode",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "zinc",
+            "aliases": ["zinc", "zinc"],
+            "extensions": [".zinc", ".zn", ".z"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "zinc",
+            "scopeName": "source.zinc",
+            "path": "./syntaxes/zinc.tmLanguage.json"
+        }]
+    }
+}

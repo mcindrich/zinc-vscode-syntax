@@ -1,0 +1,62 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "zinc",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		}, 
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.zinc",
+				"match": "\\b(if|while|return)\\b"
+			}, {
+				"name": "keyword.def.zinc",
+				"match": "\\b(func|object|enum|namespace|import|type)\\b"
+			}, {
+				"name": "variable.other.local",
+				"match": "[a-zA-Z_$][a-zA-Z_$0-9]*"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.zinc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.zinc",
+					"match": "\\\\."
+				}
+			]
+		}, 
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.dec",
+					"match": "-?[0-9]+"
+				}, {
+					"name" : "constant.boolean",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		}, "comments": {
+			"patterns": [
+				{
+					"name": "comment.line",
+					"match": "`.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.zinc"
+}
